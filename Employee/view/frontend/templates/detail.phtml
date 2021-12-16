@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var \Codilar\Employee\Block\View $block
+ */
+$employee = $block->getEmployee();
+?>
+    
+    <h1>Employee <?php echo $employee->getFirstname() ?> Details</h1>
+    <div>
+        <h4><?php echo (__('FirstName: ') .$employee->getFirstname())?></h4>
+        <h4><?php echo (__('LastName: ') .$employee->getLastname())?></h4>
+        <h4><?php echo (__('Email: ') .$employee->getEmail())?></h4>
+        <h4><?php echo (__('Mobile: ') .$employee->getMobile())?></h4>
+        <h4><?php echo (__('Address: ') .$employee->getAddress())?></h4>
+    </div>
+    <span>
+        <button><a href="<?php echo $block->getViewUrl()?>">Back</a></button>
+    </span>
+    <span>
+        <button><a href="<?php echo $block->getEditUrl(). 'entity_id/' . $employee->getEntityId()?>">Edit</a></button>
+    </span>

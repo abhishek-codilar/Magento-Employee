@@ -1,0 +1,28 @@
+<?php
+$data = $block->getFormUrl();
+?>
+<form style="padding: 1rem; margin-top: 1rem; border: 1px solid silver;background-color:#f4c2c2 " method="POST" action="<?php echo $block->getAddUrl() ?>" >
+        <h3 style="text-align:center;color:black ;">ENTER NEW EMPLOYEE DETAILS</h3>
+        <div>
+            <label>First Name</label>
+            <input name="firstname" type="text" />
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input name="lastname" type="text" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input name="email" type="text" />
+        </div>
+        <div>
+            <label>Mobile No</label>
+            <input name="mobile" type="text" />
+        </div>
+        <div>
+            <label>Address</label>
+            <textarea name="address"></textarea>
+        </div>
+        <div style="text-align:center;color:black ;">
+        <button style="margin:auto; color:black ;" >Submit</button></div>
+    </form>

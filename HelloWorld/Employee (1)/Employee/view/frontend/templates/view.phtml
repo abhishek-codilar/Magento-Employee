@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var \Codilar\Employee\Block\View $block
+ */
+$employees = $block->getAllEmp();
+?>
+<div class="employee-listing">
+    <h1>Our Employee List</h1>
+    <form  method="POST" action="<?php echo $block->getFormUrl() ?>" >
+        <input type="submit" value="Add new Employee" name="Add new Employee" style="background-color:#514943; color:white;">
+    </form>
+    <?php if (count($employees) > 0): ?>
+        <table>
+            <thead>
+            <tr>
+                <th><?php echo __('Name') ?></th>
+                <th><?php echo __('Email') ?></th>
+                <th><?php echo __('Mobile') ?></th>
+                <th><?php echo __('Date of Birth') ?></th>
+                <th><?php echo __('Address') ?></th>
+                <th><?php echo __('Date of Joining') ?></th>
+            </tr>
+            <?php foreach ($block->getAllEmp() as $employee): ?>
+                <tr>
+                    <td><?php echo $employee->getName() ?></td>
+                    <td><?php echo $employee->getEmail() ?></td>
+                    <td><?php echo $employee->getMobile() ?></td>
+                    <td><?php echo $employee->getDob() ?></td>
+                    <td><?php echo $employee->getAddress() ?></td>
+                    <td><?php echo $employee->getDoj() ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </thead>
+        </table>
+    <?php else: ?>
+        <h3>Employee List is Empty</h3>
+    <?php endif; ?>
+</div>
